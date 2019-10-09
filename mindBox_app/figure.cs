@@ -3,7 +3,8 @@
 namespace mindBox_app
 {
     public class figure
-    { 
+    {
+        //ffff
         int num;// кол-во углов
         double p;//периметр
         double r;//радиус вписанной окр.
