@@ -1,0 +1,47 @@
+CREATE TABLE Products (
+    p_id SERIAL,
+    p_name varchar(255),
+    PRIMARY KEY (p_id)
+); 
+
+CREATE TABLE Categories (
+    c_id SERIAL,
+    c_name varchar(255),
+    PRIMARY KEY (c_id)
+); 
+
+CREATE TABLE PC(
+    pc_id SERIAL,
+    p_id integer,
+    c_id integer,
+    PRIMARY KEY (pc_id)
+);
+INSERT INTO Products (p_name) VALUES 
+('Крупа гречневая'),
+('Рис'),
+('Говядина'),
+('Колбаса'),
+('Морковь')
+;
+ 
+INSERT INTO Categories (c_name) VALUES 
+('Крупа'),
+('Заморозка'),
+('Охлажденное'),
+('Мясное'),
+('Фрукты')
+;
+ 
+INSERT INTO PC (p_id, c_id) VALUES 
+(1,1),
+(2,1),
+(3,2),
+(3,3),
+(3,4),
+(4,3),
+(4,4)
+;
+
+
+
+SELECT * FROM (Products LEFT JOIN PC USING (p_id)) LEFT JOIN Categories USING (c_id);
